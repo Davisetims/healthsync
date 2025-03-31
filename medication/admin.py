@@ -1,3 +1,7 @@
 from django.contrib import admin
+from medication.models import MedicalHistory, Prescription
 
-# Register your models here.
+admin.site.register(MedicalHistory)
+admin.site.register(Prescription)
+
+
