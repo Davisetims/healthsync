@@ -1,0 +1,421 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSync - The Future of Health</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'assets\logo.jpg' %}"  alt="Health Logo">
+                <span>HealthSync</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+                <a href="#">Find Doctor</a>
+            </div>
+            <div class="login-btn">
+                <button onclick="location.href='login'">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The future<br>of health</h1>
+            <p>Streamlined patient care scheduling for a better healthcare experience and reduced waiting times for
+                doctors and patients alike.</p>
+            <div class="app-buttons">
+                <a href="#" class="app-btn"><img src="{% static 'assets/app-store.png' %}" alt="App Store"></a>
+                <a href="#" class="app-btn"><img src="{% static 'assets/google-play.png' %}" alt="Google Play"></a>
+            </div>
+        </div>
+
+        <div class="appointment-card">
+            <h3>Visit type and date</h3>
+            <div class="appointment-type">
+                <div class="type active">
+                    <i class="fas fa-user-md"></i>
+                    <span>Doctor</span>
+                </div>
+                <div class="type">
+                    <i class="fas fa-video"></i>
+                    <span>Video</span>
+                </div>
+                <div class="type">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                </div>
+                <div class="type">
+                    <i class="fas fa-heart"></i>
+                    <span>Heart</span>
+                </div>
+            </div>
+            <div class="appointment-time">
+                <div class="time-select">
+                    <label>Time</label>
+                    <select>
+                        <option>10:30 AM</option>
+                        <option>11:00 AM</option>
+                        <option>11:30 AM</option>
+                    </select>
+                </div>
+                <div class="date-select">
+                    <label>Date</label>
+                    <select>
+                        <option>Monday, Oct 5th</option>
+                        <option>Tuesday, Oct 6th</option>
+                        <option>Wednesday, Oct 7th</option>
+                    </select>
+                </div>
+            </div>
+            <button class="book-btn">Book</button>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <div class="partner-logos">
+        <div class="logo-container">
+            <img src="{% static 'assets/oscar.png' %}" alt="Oscar">
+            <img src="{% static 'assets/allianz.png' %}" alt="Allianz">
+            <img src="{% static 'assets/multicare.png' %}" alt="Multicare">
+            <img src="{% static 'assets/medclinik.png' %}" alt="Medclinic">
+            <img src="{% static 'assets/cigna.png' %}" alt="Cigna">
+            <img src="{% static 'assets/buphealth.png' %}" alt="Bup Health">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-header">
+            <div>
+                <h2>Our Features</h2>
+                <p>We make the future simple and convenient for diagnosing health and implementing them at work.</p>
+            </div>
+            <div>
+                <button class="meet-experts-btn">Meet our experts</button>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="{% static 'assets/diagnostic-icon.jpg' %}" alt="Diagnostic Examination">
+                <h3>Diagnostic Examination</h3>
+                <p>Certified medical checkups with professional doctors</p>
+            </div>
+            <div class="feature-card">
+                <img src="{% static 'assets/ophthalmology-icon.jpg' %}" alt="Children's Ophthalmology">
+                <h3>Children's Ophthalmology</h3>
+                <p>Specialized eye care for children of all ages</p>
+            </div>
+            <div class="feature-card">
+                <img src="{% static 'assets/consultation-icon.jpg' %}" alt="Consultation">
+                <h3>Consultation</h3>
+                <p>In-person or telehealth options to discuss your health concerns</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors">
+        <h2>Our dedicated doctors</h2>
+        <div class="doctor-tabs">
+            <button class="tab-btn active">General</button>
+            <button class="tab-btn">Dentist</button>
+            <button class="tab-btn">Pediatric</button>
+            <button class="tab-btn">Heart</button>
+            <button class="tab-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="{% static 'assets/doctor-baptista.jpg' %}" alt="Dr. Gustavo Baptista">
+                </div>
+                <h3>Dr. Gustavo Baptista</h3>
+                <div class="doctor-specialty">General</div>
+                <div class="doctor-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-comment"></i>
+                        <span>175</span>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="{% static 'assets/doctor-stanton.jpg' %}" alt="Dr. Omar Stanton">
+                </div>
+                <h3>Dr. Omar Stanton</h3>
+                <div class="doctor-specialty">Pediatrics</div>
+                <div class="doctor-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-comment"></i>
+                        <span>124</span>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="{% static 'assets/doctor-horwitz.jp' %}" alt="Dr. Roger Horwitz">
+                </div>
+                <h3>Dr. Roger Horwitz</h3>
+                <div class="doctor-specialty">Heart</div>
+                <div class="doctor-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-comment"></i>
+                        <span>193</span>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="{% static 'assets/doctor-westerevett.jpg' %}" alt="Dr. Davis Westerevett">
+                </div>
+                <h3>Dr. Davis Westerevett</h3>
+                <div class="doctor-specialty">Dermatology</div>
+                <div class="doctor-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-comment"></i>
+                        <span>155</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Care Section -->
+    <section class="care-section">
+        <h2>We care about your condition</h2>
+
+        <div class="care-grid">
+            <div class="care-discount blue">
+                <div class="discount-tags">
+                    <span class="tag">Cancer</span>
+                    <span class="tag">Diabetes</span>
+                    <span class="tag">Allergies</span>
+                    <span class="tag">Heart</span>
+                </div>
+                <h3>50%</h3>
+                <p>For first time patients who need regular checkups with our doctors</p>
+                <button class="discount-btn">Get discount</button>
+            </div>
+
+            <div class="care-discount teal">
+                <h3>25%</h3>
+                <p>Discount for all new patients at our dental health clinics</p>
+                <button class="discount-btn">Get discount</button>
+            </div>
+
+            <div class="care-message">
+                <h3>#WeCareAboutYou</h3>
+                <blockquote>
+                    "Trust us to the care we are proud to provide. From check-ups to emergency care."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Question from our clients</h2>
+        <p>A comprehensive disease index for diagnosing health and implementing them at work</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">01</span>
+                    <span class="faq-text">CANCER</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about cancer would be displayed here, including symptoms, treatments, and
+                        when to see a doctor.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">02</span>
+                    <span class="faq-text">PANCREATIC PAIN</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about pancreatic pain would be displayed here, including symptoms,
+                        treatments, and when to see a doctor.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">03</span>
+                    <span class="faq-text">GERD</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about gerd would be displayed here, including symptoms, treatments, and when
+                        to see a doctor.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">04</span>
+                    <span class="faq-text">CORONA VIRUS (COVID-19)</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about corona virus (covid-19) would be displayed here, including symptoms,
+                        treatments, and when to see a doctor.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">05</span>
+                    <span class="faq-text">STOMACH ACHES</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about stomach aches would be displayed here, including symptoms, treatments,
+                        and when to see a doctor.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">06</span>
+                    <span class="faq-text">VERTIGO</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Detailed information about vertigo would be displayed here, including symptoms, treatments, and
+                        when to see a doctor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-more">
+            <button class="find-more-btn">Find out more</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What others say about us</h2>
+        <p>A comprehensive network of users with proven feedback</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"From the time I clicked on the website link to the time a nurse came to the
+                    door, the care was exemplary! Amazing care!"</p>
+                <div class="testimonial-author">
+                    <img src="{% static 'assets/testimonial1.jpg' %}" alt="Charles Prins">
+                    <span>Charles Prins</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Bill was fantastic! Full cleaner and more competent than other medical
+                    services. The registration mixture is incredibly helpful. Highly recommended."</p>
+                <div class="testimonial-author">
+                    <img src="{% static 'assets/testimonial2.jpg' %}" alt="Tania Ferrugia">
+                    <span>Tania Ferrugia</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"My experience was AMAZING! Nurse came to see us in 1 hour. Told us what to
+                    do. I will definitely be using them again!"</p>
+                <div class="testimonial-author">
+                    <img src="{% static 'assets/testimonial3.jpg' %}" alt="Sarah Morgan">
+                    <span>Sarah Morgan</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Just went beyond excellent. Better for me. Very convenient."</p>
+                <div class="testimonial-author">
+                    <img src="{% static 'assets/testimonial4.jpg' %}" alt="Jason Lee">
+                    <span>Jason Lee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Promotion Section -->
+    <section class="app-promo">
+        <div class="promo-content">
+            <h2>Trust us, it will all look much easier</h2>
+            <div class="app-buttons">
+                <a href="#" class="app-btn"><img src="{% static 'assets/app-store.png' %}" alt="App Store"></a>
+                <a href="#" class="app-btn"><img src="{% static 'assets/google-play.png' %}" alt="Google Play"></a>
+            </div>
+        </div>
+        <div class="promo-image">
+            <img src="{% static 'assets/app-preview.png' %}" alt="App Preview">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'assets/logo.jpg' %}" alt="HealthSync Logo">
+                <span>HealthSync</span>
+                <p>© HealthSync 2023</p>
+            </div>
+
+                <div class="footer-column">
+                    <h4>CONTACT US</h4>
+                    <ul>
+                        <li><a href="#">PRIVACY POLICY</a></li>
+                        <li><a href="#">TERMS OF USE</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">FAQS</a></li>
+                        <li><a href="#">DISCLAIMER</a></li>
+                        <li><a href="#">BLOG</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="contact-phone">
+                        <p>(877) 234-4556</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'javascript/index.js' %}"></script>
+</body>
+
+</html>
