@@ -8,6 +8,15 @@ class User(AbstractUser):
     PREMIUM = 'premium'
     PLAN_CHOICES = [(FREE, 'Free'), (PREMIUM, 'Premium')]
 
+    USER_TYPES = [
+        ('patient', 'Chronic Illness Patient'),
+        ('fitness', 'Fitness Enthusiast'),
+        ('professional', 'Busy Professional'),
+        ('doctor', 'Healthcare Provider'),
+
+    ]
+   
+
     phone_regex = RegexValidator(
     regex=r'^\+\d{1,3}\d{9}$',  
     message="Phone number must start with '+' followed by country code and 9 digits."
@@ -28,6 +37,7 @@ class User(AbstractUser):
     city = models.CharField(blank=True, null=True, max_length=50)
     plan = models.CharField(max_length=10, choices=PLAN_CHOICES, default=FREE)
     password = models.CharField(max_length=100)
+    user_type = models.CharField(max_length=20, choices=USER_TYPES, default='patient')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

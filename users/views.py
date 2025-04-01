@@ -35,3 +35,6 @@ def logout_view(request):
     logout(request)  
     return redirect('/')
 
+def patient_dashboard(request):
+    return render(request, 'patient_dashboard.html')
+

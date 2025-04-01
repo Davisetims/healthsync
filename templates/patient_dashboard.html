@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/patient_dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>HMS</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#appointments"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="../patient/records.html"><i class="fas fa-notes-medical"></i> Medical Records</a></li>
+                    <li><a href="#" id="prescriptionsLink"><i class="fas fa-pills"></i> Prescriptions</a></li>
+                    <li><a href="#"><i class="fas fa-comment-medical"></i> Consultations</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img id="profilePic" src="/assets/hero-bg.jpg" alt="Profile Picture">
+                        <span id="usernameDisplay">username</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <h1>Welcome back, </h1>
+                <p class="subtitle">Here's your health summary and upcoming appointments</p>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Upcoming Appointments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Recent Tests</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>3</h3>
+                            <p>Active Prescriptions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-comment-medical"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>1</h3>
+                            <p>Messages</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="dashboard-grid">
+                    <!-- Left Column -->
+                    <div class="dashboard-column">
+                        <!-- Upcoming Appointments -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h2>Upcoming Appointments</h2>
+                                <a href="#appointments" class="view-all">View All</a>
+                            </div>
+                            <div class="appointments-list">
+                                <div class="appointment-item">
+                                    <div class="appointment-icon">
+                                        <img src="assets/oscar.png" alt="Doctor">
+                                    </div>
+                                    <div class="appointment-details">
+                                        <h3>Dr. Sarah Johnson</h3>
+                                        <p>Cardiology</p>
+                                        <div class="appointment-time">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span>March 22, 2025</span>
+                                            <i class="far fa-clock"></i>
+                                            <span>10:00 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn-reschedule">Reschedule</button>
+                                        <button class="btn-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                                <div class="appointment-item">
+                                    <div class="appointment-icon">
+                                        <img src="/api/placeholder/50/50" alt="Doctor">
+                                    </div>
+                                    <div class="appointment-details">
+                                        <h3>Dr. Michael Chen</h3>
+                                        <p>General Checkup</p>
+                                        <div class="appointment-time">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span>March 30, 2025</span>
+                                            <i class="far fa-clock"></i>
+                                            <span>2:30 PM</span>
+                                        </div>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn-reschedule">Reschedule</button>
+                                        <button class="btn-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Health Metrics -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h2>Health Metrics</h2>
+                                <a href="#" class="view-all">View Details</a>
+                            </div>
+                            <div class="health-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-info">
+                                        <h3>Blood Pressure</h3>
+                                        <p>Last recorded: March 15, 2025</p>
+                                    </div>
+                                    <div class="metric-value">120/80</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-info">
+                                        <h3>Heart Rate</h3>
+                                        <p>Last recorded: March 15, 2025</p>
+                                    </div>
+                                    <div class="metric-value">72 bpm</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-info">
+                                        <h3>Blood Glucose</h3>
+                                        <p>Last recorded: March 12, 2025</p>
+                                    </div>
+                                    <div class="metric-value">95 mg/dL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="dashboard-column">
+                        <!-- Quick Actions -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h2>Quick Actions</h2>
+                            </div>
+                            <div class="quick-actions">
+                                <div class="action-item" id="bookAppointmentBtn">
+                                    <div class="action-icon blue">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </div>
+                                    <span>Book Appointment</span>
+                                </div>
+                                <!-- Book Appointment Popup -->
+                                <!-- Book Appointment Popup -->
+                                <div id="appointmentModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Book an Appointment</h2>
+                                        <form id="appointmentForm">
+                                            <label for="doctor">Select Doctor:</label>
+                                            <select id="doctor" required>
+                                                <option value="">Loading doctors...</option>
+                                            </select>
+
+                                            <label for="appointment_date">Appointment Date:</label>
+                                            <input type="datetime-local" id="appointment_date" required>
+
+                                            <label for="notes">Notes (Optional):</label>
+                                            <textarea id="notes"></textarea>
+
+                                            <button type="submit">Book Appointment</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="action-item" id="openConsultationPopup">
+                                    <div class="action-icon green">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <span>Virtual Consultation</span>
+                                </div>
+                                <div class="action-item" id="prescriptionBtn">
+                                    <div class="action-icon purple">
+                                        <i class="fas fa-prescription"></i>
+                                    </div>
+                                    <span>Prescription</span>
+                                </div>
+
+                                <!-- Prescription Popup -->
+                                <div class="popup-overlay" id="prescriptionOverlay"></div>
+                                <div class="popup-container" id="prescriptionContainer">
+                                    <div class="popup-header">
+                                        <span>Prescriptions</span>
+                                        <span class="close-btn" id="closePrescriptionPopup">&times;</span>
+                                    </div>
+                                    <div class="popup-content" id="prescriptionContent">
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+
+                                <div class="action-item" id="testResultsBtn">
+                                    <div class="action-icon orange">
+                                        <i class="fas fa-file-medical-alt"></i>
+                                    </div>
+                                    <span>Test Results</span>
+                                </div>
+                                <div class="popup-overlay" id="popupOverlay"></div>
+                                <div class="popup-container" id="popupContainer">
+                                    <div class="popup-header">
+                                        <span>Test Results</span>
+                                        <span class="close-btn" id="closePopup">&times;</span>
+                                    </div>
+                                    <div class="popup-content" id="testResultsContent">
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Prescriptions -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h2>Active Prescriptions</h2>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div class="prescriptions-list">
+                                <div class="prescription-item">
+                                    <div class="prescription-icon">
+                                        <i class="fas fa-capsules"></i>
+                                    </div>
+                                    <div class="prescription-details">
+                                        <h3>Atorvastatin 20mg</h3>
+                                        <p>Take 1 tablet daily at bedtime</p>
+                                        <div class="prescription-info">
+                                            <span>Dr. Sarah Johnson</span>
+                                            <span>Refills: 2 remaining</span>
+                                            <span>Expires: June 15, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="prescription-actions">
+                                        <button class="btn-refill">Refill</button>
+                                    </div>
+                                </div>
+                                <div class="prescription-item">
+                                    <div class="prescription-icon">
+                                        <i class="fas fa-pills"></i>
+                                    </div>
+                                    <div class="prescription-details">
+                                        <h3>Metformin 500mg</h3>
+                                        <p>Take 1 tablet twice daily with meals</p>
+                                        <div class="prescription-info">
+                                            <span>Dr. Michael Chen</span>
+                                            <span>Refills: 3 remaining</span>
+                                            <span>Expires: August 10, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="prescription-actions">
+                                        <button class="btn-refill">Refill</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Messages -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h2>Recent Messages</h2>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div class="messages-list">
+                                <div class="message-item unread">
+                                    <div class="message-icon">
+                                        <img src="/api/placeholder/40/40" alt="Doctor">
+                                    </div>
+                                    <div class="message-details">
+                                        <h3>Dr. Sarah Johnson</h3>
+                                        <p>Your test results have been uploaded. Please review them before your next
+                                            appointment.</p>
+                                        <span class="message-time">Today, 9:30 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The pop up for fetching the appointments of the user -->
+    <div id="appointmentsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Appointments</h2>
+            <div id="appointmentsList"></div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'javascript/patient_dashboard.js' %}"></script>
+</body>
+
+</html>
