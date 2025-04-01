@@ -5,104 +5,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthSync Login</title>
+    <title>Login - OpenUp</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="login-container">
         <div class="login-card">
-            <!-- Left Section -->
+            <!-- Left Section with Illustration -->
             <div class="illustration-section">
-                <div class="logo">LOGO</div>
-                <h2 class="tagline">Smart healthcare at your doorstep with seamless access for all.</h2>
-
-                <div class="doctor-illustrations">
-                    <!-- Doctor 1 -->
-                    <div class="doctor-card doctor-1">
-                        <img src="/assets/doctor-roger.jpg" alt="Doctor" class="doctor-image">
-                        <div class="doctor-window">
-                            <div class="window-controls">
-                                <span class="control"></span>
-                                <span class="control"></span>
-                                <span class="control"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Doctor 2 -->
-                    <div class="doctor-card doctor-2">
-                        <img src="/assets/doctor-gustavo.jpg" alt="Doctor" class="doctor-image">
-                        <div class="doctor-window">
-                            <div class="window-controls">
-                                <span class="control"></span>
-                                <span class="control"></span>
-                                <span class="control"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Doctor 3 -->
-                    <div class="doctor-card doctor-3">
-                        <img src="/assets/doctor-davis.jpg" alt="Doctor" class="doctor-image">
-                        <div class="doctor-window">
-                            <div class="window-controls">
-                                <span class="control"></span>
-                                <span class="control"></span>
-                                <span class="control"></span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="logo">
+                    <h1>O<span class="highlight">pen</span>Up</h1>
                 </div>
+                <p class="tagline">Your journey to better mental wellness starts here.</p>
             </div>
 
-            <!-- Right Section -->
+            <!-- Right Section with Login Form -->
             <div class="login-section">
-                <h1 class="login-title">HMS Portal</h1>
-                <p class="login-subtitle">Welcome back. Please enter your details</p>
+                <h2 class="login-title">Welcome Back!</h2>
+                <p class="login-subtitle">Log in to continue your mental wellness journey.</p>
 
-                <form id="loginForm" class="login-form">
+                <!-- Django Messages for Errors -->
+                {% if messages %}
+                {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+
+                <form method="post" class="login-form">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <label for="username">Username</label>
+                        <label for="username">Email</label>
                         <div class="input-group">
-                            <input type="text" id="username" placeholder="Enter your username" required>
+                            <input type="email" name="username" id="username" placeholder="Enter your email" required>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="input-group">
-                            <input type="password" id="password" placeholder="Enter your password" required>
-                            <button type="button" class="toggle-password">
-                                <i class="fas fa-eye-slash"></i>
-                            </button>
+                            <input type="password" name="password" id="password" placeholder="Enter your password"
+                                required>
                         </div>
                     </div>
-
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="login-button">LOGIN</button>
-
-                    <div class="signup-option">
-                        <p>Sign up as Patient</p>
-                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
                 </form>
 
-                <div class="login-footer">
-                    <p>Powered by HMS Care Pvt. Ltd</p>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="{% static 'javascript/login.js' %}"></script>
+    <script src="{% static 'js/login_signup.js' %}"></script>
 </body>
 
 </html>

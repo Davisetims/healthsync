@@ -19,9 +19,21 @@ def login_view(request):
         password = request.POST.get("password")
 
         user = authenticate(request, username=username, password=password)
+
         if user is not None:
             login(request, user)
-            return redirect("dashboard")  
+
+            # Redirect based on user type
+            if user.user_type == "patient":
+                return redirect("patient-dashboard")
+            elif user.user_type == "doctor":  # Assuming "provider" means doctor
+                return redirect("doctor-dashboard")
+            elif user.is_superuser:
+                return redirect("admin-dashboard")
+            else:
+                messages.error(request, "Unauthorized access")
+                return redirect("index")  
+
         else:
             messages.error(request, "Invalid username or password")
 
