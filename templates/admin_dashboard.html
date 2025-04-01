@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>HMS</h1>
+            </div>
+            <div class="menu">
+                <a href="#" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Appointments</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Medical Records</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-prescription"></i>
+                    <span>Prescriptions</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-comment-medical"></i>
+                    <span>Consultations</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Find Doctors</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="topbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="profile">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-pic">A</div>
+                        <div>admin</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-section">
+                <h1>Welcome back, admin!</h1>
+                <p>Here's your hospital management system overview</p>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="icon-box icon-doctors">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="doctors-count">24</h3>
+                        <p>Doctors Available</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box icon-patients">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="patients-count">653</h3>
+                        <p>Total Patients</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box icon-nurses">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="nurses-count">42</h3>
+                        <p>Nurses Available</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box icon-appointments">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="appointments-count">98</h3>
+                        <p>Total Appointments</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box icon-messages">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="messages-count">35</h3>
+                        <p>New Messages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointments-section">
+                <div class="section-header">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="#" class="btn-view-all">View All</a>
+                </div>
+                <div class="appointments-list">
+                    <div class="appointment">
+                        <div class="doctor-img">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-info">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p>Cardiology</p>
+                            <div class="appointment-date">
+                                <i class="far fa-calendar"></i>
+                                <span>March 22, 2025</span>
+                                <i class="far fa-clock" style="margin-left: 10px;"></i>
+                                <span>10:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="appointment-buttons">
+                            <button class="btn btn-reschedule">Reschedule</button>
+                            <button class="btn btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="appointment">
+                        <div class="doctor-img">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-info">
+                            <h4>Dr. Michael Chen</h4>
+                            <p>General Checkup</p>
+                            <div class="appointment-date">
+                                <i class="far fa-calendar"></i>
+                                <span>March 30, 2025</span>
+                                <i class="far fa-clock" style="margin-left: 10px;"></i>
+                                <span>2:30 PM</span>
+                            </div>
+                        </div>
+                        <div class="appointment-buttons">
+                            <button class="btn btn-reschedule">Reschedule</button>
+                            <button class="btn btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="appointment">
+                        <div class="doctor-img">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-info">
+                            <h4>Dr. Emily Rodriguez</h4>
+                            <p>Neurology</p>
+                            <div class="appointment-date">
+                                <i class="far fa-calendar"></i>
+                                <span>April 5, 2025</span>
+                                <i class="far fa-clock" style="margin-left: 10px;"></i>
+                                <span>11:15 AM</span>
+                            </div>
+                        </div>
+                        <div class="appointment-buttons">
+                            <button class="btn btn-reschedule">Reschedule</button>
+                            <button class="btn btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <div class="section-header">
+                    <h2>Quick Actions</h2>
+                </div>
+                <div class="actions-grid">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <p>Book Appointment</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <p>Virtual Consultation</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                        </div>
+                        <p>Refill Prescription</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <p>Test Results</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <p>Add Patient</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <p>View Reports</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'javascript/admin_dashboard.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,600 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Doctor Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/doctor_dashboard.css' %}">
+    <!--doctor js-->
+    <script src="{% static 'javascript/doctor_dashboard.js' %}" defer></script>
+
+    <script defer>
+        /* Event listener for toggling the sidebar on small screens */
+        document.addEventListener("DOMContentLoaded", () => {
+            const sidebar = document.querySelector(".sidebar");
+            const hamburger = document.querySelector(".hamburger");
+            const closeBtn = document.querySelector(".close-btn");
+
+            // Toggle sidebar on hamburger click
+            hamburger.addEventListener("click", () => sidebar.classList.add("active"));
+
+            // Hide sidebar on close button click
+            closeBtn.addEventListener("click", () => sidebar.classList.remove("active"));
+        });
+
+    </script>
+    </body>
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>HMS</h2>
+            </div>
+            <div class="close-btn">&times;</div>
+            <div class="menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                    <li><a href="#"><i class="fas fa-user-injured"></i> Patients</a></li>
+                    <li><a href="#"><i class="fas fa-prescription"></i> Prescriptions</a></li>
+                    <li><a href="#"><i class="fas fa-comment-medical"></i> Consultations</a></li>
+
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+
+            <!-- Header -->
+            <header>
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <div class="badge">3</div>
+                    </div>
+                    <div class="user-profile">
+                        <img src="/api/placeholder/100/100" alt="Dr. Sarah Johnson">
+                        <span>Dr. wamie</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Hamburger Menu -->
+                <div class="hamburger">&#9776;</div> <br>
+                <hr> <br>
+                <h1>Welcome, Dr. Wamilimo!</h1>
+                <p class="subtitle">Here's your practice summary and upcoming appointments</p>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Today's Appointments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>247</h3>
+                            <p>Active Patients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-prescription"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>18</h3>
+                            <p>Pending Prescriptions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-comment-medical"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Unread Messages</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Upcoming Appointments -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Upcoming Appointments</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>ann annie</h3>
+                                <p>Cardiology Follow-up</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>March 22, 2025</span>
+                                    <i class="far fa-clock"></i>
+                                    <span>10:00 AM</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-reschedule">Reschedule</button>
+                                <button class="btn-cancel">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>Emily Parker</h3>
+                                <p>Initial Consultation</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>March 22, 2025</span>
+                                    <i class="far fa-clock"></i>
+                                    <span>11:30 AM</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-reschedule">Reschedule</button>
+                                <button class="btn-cancel">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>Robert waititu</h3>
+                                <p>Cardiac Stress Test Results</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>March 22, 2025</span>
+                                    <i class="far fa-clock"></i>
+                                    <span>2:15 PM</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-reschedule">Reschedule</button>
+                                <button class="btn-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        <div class="quick-actions">
+                            <div class="action-item">
+                                <div class="action-icon blue">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </div>
+                                <span>Schedule Appointment</span>
+                            </div>
+                            <div class="action-item">
+                                <div class="action-icon green">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>my profile</span>
+                            </div>
+                            <div class="action-item">
+                                <div class="action-icon purple">
+                                    <i class="fas fa-file-prescription"></i>
+                                </div>
+                                <span>Write Prescription</span>
+                            </div>
+                            <div class="action-item">
+                                <div class="action-icon orange">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <span>Start Video Call</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Patients -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Recent Patients</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>John maina</h3>
+                                <p>Hypertension, Hyperlipidemia</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Last visit: Mar 15, 2025</span>
+                                    <span><i class="fas fa-birthday-cake"></i> 45 years</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Record</button>
+                            </div>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>Mary anne</h3>
+                                <p>Diabetes, Chronic Kidney Disease</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Last visit: Mar 18, 2025</span>
+                                    <span><i class="fas fa-birthday-cake"></i> 62 years</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Record</button>
+                            </div>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>David ntii</h3>
+                                <p>Coronary Artery Disease</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Last visit: Mar 20, 2025</span>
+                                    <span><i class="fas fa-birthday-cake"></i> 58 years</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Record</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Recent Messages</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="message-item unread">
+                            <div class="message-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="message-details">
+                                <h3>John waina</h3>
+                                <p>Doctor, I've been experiencing increased heart palpitations since starting the new
+                                    medication. Should I be concerned?</p>
+                                <div class="message-time">Today, 9:45 AM</div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-icon">
+                                <img src="/api/placeholder/100/100" alt="Nurse">
+                            </div>
+                            <div class="message-details">
+                                <h3>Nurse Williams</h3>
+                                <p>Lab results for patient Emily Parker are ready for your review.</p>
+                                <div class="message-time">Yesterday, 4:30 PM</div>
+                            </div>
+                        </div>
+                        <div class="message-item unread">
+                            <div class="message-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="message-details">
+                                <h3>Mary Johnson</h3>
+                                <p>I need a refill for my prescription. Can you approve it? Thank you.</p>
+                                <div class="message-time">Yesterday, 2:15 PM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pending Tasks -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Pending Tasks</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Prescription Refills</h3>
+                                <p>8 requests pending approval</p>
+                            </div>
+                            <button class="btn-view">Review</button>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Lab Results</h3>
+                                <p>12 results pending review</p>
+                            </div>
+                            <button class="btn-view">Review</button>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Patient Records</h3>
+                                <p>5 records need updating</p>
+                            </div>
+                            <button class="btn-view">Update</button>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Referrals</h3>
+                                <p>3 referrals pending</p>
+                            </div>
+                            <button class="btn-view">Process</button>
+                        </div>
+                    </div>
+
+                    <!-- Practice Analytics -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Practice Analytics</h2>
+                            <a href="#" class="view-all">Full Report
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Appointments This Week</h3>
+                                <p>Total scheduled appointments</p>
+                            </div>
+                            <div class="metric-value">43</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>New Patients</h3>
+                                <p>New patients this month</p>
+                            </div>
+                            <div class="metric-value">18</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>No-Shows</h3>
+                                <p>Missed appointments this month</p>
+                            </div>
+                            <div class="metric-value">5</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info">
+                                <h3>Patient Satisfaction</h3>
+                                <p>Based on recent feedback</p>
+                            </div>
+                            <div class="metric-value">4.8/5</div>
+                        </div>
+                    </div>
+
+                    <!-- Prescriptions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Prescription Requests</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>Mary Johnson</h3>
+                                <p>Metformin 500mg</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>Requested: March 20, 2025</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-refill">Approve</button>
+                                <button class="btn-cancel">Deny</button>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>Robert Wilson</h3>
+                                <p>Lisinopril 10mg</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>Requested: March 19, 2025</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-refill">Approve</button>
+                                <button class="btn-cancel">Deny</button>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="appointment-details">
+                                <h3>Emily Parker</h3>
+                                <p>Atorvastatin 40mg</p>
+                                <div class="appointment-time">
+                                    <i class="far fa-calendar"></i>
+                                    <span>Requested: March 18, 2025</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-refill">Approve</button>
+                                <button class="btn-cancel">Deny</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Preview -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Calendar Preview</h2>
+                            <a href="#" class="view-all">Full Calendar</a>
+                        </div>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; margin-bottom: 15px;">
+                            <div style="font-weight: bold; padding: 8px;">Sun</div>
+                            <div style="font-weight: bold; padding: 8px;">Mon</div>
+                            <div style="font-weight: bold; padding: 8px;">Tue</div>
+                            <div style="font-weight: bold; padding: 8px;">Wed</div>
+                            <div style="font-weight: bold; padding: 8px;">Thu</div>
+                            <div style="font-weight: bold; padding: 8px;">Fri</div>
+                            <div style="font-weight: bold; padding: 8px;">Sat</div>
+
+                            <div style="padding: 8px; color: #ccc;">16</div>
+                            <div style="padding: 8px; color: #ccc;">17</div>
+                            <div style="padding: 8px; color: #ccc;">18</div>
+                            <div style="padding: 8px; color: #ccc;">19</div>
+                            <div style="padding: 8px; color: #ccc;">20</div>
+                            <div
+                                style="padding: 8px; background-color: var(--primary-light); border-radius: 5px; color: var(--primary-color);">
+                                21</div>
+                            <div style="padding: 8px;">22</div>
+
+                            <div style="padding: 8px;">23</div>
+                            <div
+                                style="padding: 8px; background-color: var(--green-light); border-radius: 5px; color: var(--success-color);">
+                                24</div>
+                            <div style="padding: 8px;">25</div>
+                            <div
+                                style="padding: 8px; background-color: var(--purple-light); border-radius: 5px; color: var(--purple-color);">
+                                26</div>
+                            <div style="padding: 8px;">27</div>
+                            <div
+                                style="padding: 8px; background-color: var(--orange-light); border-radius: 5px; color: var(--orange-color);">
+                                28</div>
+                            <div style="padding: 8px;">29</div>
+
+                            <div style="padding: 8px;">30</div>
+                            <div style="padding: 8px;">31</div>
+                            <div style="padding: 8px; color: #ccc;">1</div>
+                            <div style="padding: 8px; color: #ccc;">2</div>
+                            <div style="padding: 8px; color: #ccc;">3</div>
+                            <div style="padding: 8px; color: #ccc;">4</div>
+                            <div style="padding: 8px; color: #ccc;">5</div>
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div
+                                    style="width: 10px; height: 10px; background-color: var(--primary-light); border-radius: 50%; margin-right: 10px;">
+                                </div>
+                                <span style="font-size: 13px;">Regular Appointments (12)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div
+                                    style="width: 10px; height: 10px; background-color: var(--green-light); border-radius: 50%; margin-right: 10px;">
+                                </div>
+                                <span style="font-size: 13px;">Follow-ups (8)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <div
+                                    style="width: 10px; height: 10px; background-color: var(--purple-light); border-radius: 50%; margin-right: 10px;">
+                                </div>
+                                <span style="font-size: 13px;">Consultations (5)</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div
+                                    style="width: 10px; height: 10px; background-color: var(--orange-light); border-radius: 50%; margin-right: 10px;">
+                                </div>
+                                <span style="font-size: 13px;">Tests/Procedures (4)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Lab Results -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Recent Lab Results</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>ndoti ntui - CBC Results</h3>
+                                <p>Lab: Central Medical Labs</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Completed: Mar 19, 2025</span>
+                                    <span><i class="fas fa-exclamation-circle" style="color: var(--warning-color);"></i>
+                                        Flag: HGB Low</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Details</button>
+                            </div>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>Mary Johnson - Lipid Panel</h3>
+                                <p>Lab: Central Medical Labs</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Completed: Mar 17, 2025</span>
+                                    <span><i class="fas fa-exclamation-circle" style="color: var(--danger-color);"></i>
+                                        Flag: LDL High</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Details</button>
+                            </div>
+                        </div>
+                        <div class="patient-item">
+                            <div class="patient-icon">
+                                <img src="/api/placeholder/100/100" alt="Patient">
+                            </div>
+                            <div class="patient-details">
+                                <h3>Robert Wilson - A1C Test</h3>
+                                <p>Lab: City Healthcare Labs</p>
+                                <div class="patient-info">
+                                    <span><i class="fas fa-calendar-alt"></i> Completed: Mar 16, 2025</span>
+                                    <span><i class="fas fa-check-circle" style="color: var(--success-color);"></i>
+                                        Status: Normal</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-view">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

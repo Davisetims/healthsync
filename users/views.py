@@ -38,3 +38,8 @@ def logout_view(request):
 def patient_dashboard(request):
     return render(request, 'patient_dashboard.html')
 
+def doctor_dashboard(request):
+    return render(request, 'doctor_dashboard.html')
+
+def admin_dashboard(request):
+    return render(request, 'admin_dashboard.html')
