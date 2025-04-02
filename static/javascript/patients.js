@@ -143,7 +143,7 @@ function openPatientModal(patientId) {
             </dl>
             <div class="modal-actions">
                
-                <button class="view-btn" onclick="window.location.href='/patients/${patientId}/appointments/'">View Appointments</button>
+                <button class="view-btn" onclick="window.location.href='/get/appointments/'">View Appointments</button>
             </div>
         `;
     } else {

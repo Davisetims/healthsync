@@ -25,6 +25,17 @@ def book_appointment(request):
 
     return render(request, "book_appointment.html", {"form": form})
 
+def get_user_appointments(user):
+    """Fetch appointments and total count for the given user."""
+    if user.user_type == 'patient':
+        appointments = Appointment.objects.filter(patient=user)
+    elif user.user_type == 'doctor':
+        appointments = Appointment.objects.filter(doctor=user)
+    else:
+        appointments = Appointment.objects.none()
+    
+    return appointments, appointments.count()
+
 @login_required
 def user_appointments(request):
     user = request.user
@@ -37,4 +48,11 @@ def user_appointments(request):
     else:
         appointments = Appointment.objects.none()  # Return empty if not a patient or doctor
 
-    return render(request, 'get_appointment.html', {'appointments': appointments})
+    total_appointments = appointments.count()  # Count total appointments
+
+    return render(
+        request, 
+        'get_appointment.html', 
+        {'appointments': appointments}
+    )
+

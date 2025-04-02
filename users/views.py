@@ -4,6 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from users.models import User
 from django.http import JsonResponse
+import json
+from appointments.views import get_user_appointments
+from medication.views import get_user_prescriptions
 
 
 def index(request):
@@ -55,7 +58,21 @@ def patient_dashboard(request):
 
 @login_required(login_url='/login/') 
 def doctor_dashboard(request):
-    return render(request, 'doctor_dashboard.html')
+    user = request.user
+    total_patients = User.objects.filter(user_type='patient').count() 
+    _, total_appointments = get_user_appointments(user)
+    response = get_user_prescriptions(request)  # This returns a JsonResponse
+    response_data = json.loads(response.content)  # Convert JSON to Python dict
+    total_prescriptions = response_data.get("total_prescriptions", 0)
+    print(total_appointments)
+    return render(
+        request, 'doctor_dashboard.html',
+        {'total_appointments': total_appointments,
+        'total_patients': total_patients, 
+        'total_prescriptions': total_prescriptions})
+          
+
+  
 
 @login_required(login_url='/login/') 
 def admin_dashboard(request):
