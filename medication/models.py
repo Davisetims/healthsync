@@ -30,7 +30,7 @@ class Prescription(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     prescribed_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-
+    
     def __str__(self):
         return f"{self.patient.username} - {self.name}"
 
