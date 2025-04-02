@@ -1,0 +1,74 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/patients.css' %}">
+<div class="patients-container">
+    <div class="patients-header">
+        <h1>Patients</h1>
+        <div class="search-filter">
+            <input type="text" id="patientSearch" placeholder="Search patients...">
+            <select id="filterType">
+                <option value="all">All Patients</option>
+                <option value="recent">Recently Added</option>
+                <option value="upcoming">Upcoming Appointments</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="patients-list">
+        <table id="patientsTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in users %}
+                {% if patient.user_type == 'patient' %}
+                <tr class="patient-row" data-id="{{ patient.id }}">
+                    <td>{{ patient.id }}</td>
+                    <td>{{ patient.first_name|default:" " }} {{ patient.last_name|default:" " }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>{{ patient.country|default:"-" }}</td>
+                    <td>{{ patient.city|default:"-" }}</td>
+                    <td class="action-buttons">
+                        <button class="view-btn" data-id="{{ patient.id }}">View</button>
+                    </td>
+                </tr>
+                {% endif %}
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="no-data">No patients found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <span id="currentPage">Page 1</span>
+        <button id="nextPage">Next</button>
+    </div>
+</div>
+
+<!-- Patient Detail Modal -->
+<div id="patientModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Patient Details</h2>
+        <div id="patientDetails">
+            <!-- Patient details will be loaded here -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'javascript/patients.js' %}"></script>
+{% endblock %}

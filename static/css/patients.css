@@ -1,0 +1,217 @@
+/* Patients List Styles */
+.patients-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.patients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.patients-header h1 {
+    color: #2b6cb0;
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-filter input {
+    width: 250px;
+}
+
+.patients-list {
+    overflow-x: auto;
+}
+
+#patientsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+#patientsTable th,
+#patientsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#patientsTable th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+#patientsTable tr:hover {
+    background-color: #f3f4f6;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.view-btn {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #2563eb;
+}
+
+.edit-btn:hover {
+    background-color: #059669;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 6px 12px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+    background-color: #2563eb;
+}
+
+#currentPage {
+    font-weight: 500;
+}
+
+.no-data {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 700px;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #4b5563;
+}
+
+#patientDetails {
+    margin-top: 15px;
+}
+
+#patientDetails dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+#patientDetails dt {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+#patientDetails dd {
+    margin-left: 0;
+    color: #1f2937;
+}

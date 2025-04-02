@@ -800,3 +800,115 @@ header {
         display: none;
     }
 }
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-radius: 9px 9px 0 0;
+    /* Match the modal-content radius */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 1;
+}
+
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-body input,
+.modal-body select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+    padding: 15px 20px;
+}
+
+.action-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.action-item:hover .action-icon {
+    transform: scale(1.1);
+}
+
+.action-icon {
+    transition: transform 0.3s;
+}
+
+/* Center the modal */
+.modal-dialog {
+    max-width: 80%;
+    /* Adjust width to make it larger */
+    margin: 10% auto;
+    /* Center it vertically */
+}
+
+/* Style the modal header */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #0056b3;
+}
+
+/* Style the modal title */
+.modal-title {
+    font-weight: bold;
+}
+
+/* Style the close button */
+.btn-close {
+    filter: brightness(0) invert(1);
+    /* Makes the close button white */
+}
+
+/* Table Styling */
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Light grey hover effect */
+}
+
+/* Table headers */
+.table-dark th {
+    background-color: #343a40 !important;
+    color: white;
+}
+
+/* Center text in table cells */
+td,
+th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Add spacing between modal and screen */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
