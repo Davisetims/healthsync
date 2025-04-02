@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from medication.models import MedicalRecord, HealthProfile
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login/')  
 def get_medical_records(request):
     if request.user.is_authenticated:
         try:

@@ -47,11 +47,14 @@ def logout_view(request):
     logout(request)  
     return redirect('/')
 
+@login_required(login_url='/login/') 
 def patient_dashboard(request):
     return render(request, 'patient_dashboard.html')
 
+@login_required(login_url='/login/') 
 def doctor_dashboard(request):
     return render(request, 'doctor_dashboard.html')
 
+@login_required(login_url='/login/') 
 def admin_dashboard(request):
     return render(request, 'admin_dashboard.html')

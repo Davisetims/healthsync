@@ -762,78 +762,85 @@ button:hover {
     border-bottom: none;
 }
 
-/* Prescriptions over lay */
-
-.popup-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    max-width: 90%;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    display: none;
-    z-index: 1000;
-    font-family: Arial, sans-serif;
+/* Center the modal on the screen */
+.modal-dialog {
+    max-width: 600px;
+    /* Adjust width */
+    margin: 1.75rem auto;
 }
 
-.popup-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+/* Style the modal header */
+.modal-header {
+    background-color: #007bff;
+    /* Blue header */
+    color: white;
+    border-bottom: 2px solid #0056b3;
 }
 
-.close-btn {
-    font-size: 24px;
-    cursor: pointer;
+/* Style the close button for better visibility */
+.modal-header .btn-close {
+    background: none;
+    /* Remove background */
+    filter: none;
+    /* Reset any previous filter */
+    opacity: 1;
+    /* Ensure full visibility */
+}
+
+/* Add red color to the close button */
+.modal-header .btn-close::before {
+    content: "\2715";
+    /* Unicode for 'X' */
+    font-size: 30px;
     color: red;
-}
-
-.popup-content {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-top: 10px;
-    padding-right: 10px;
-}
-
-.prescription-item {
-    background: #f5f5f5;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #007bff;
-}
-
-.prescription-item strong {
-    color: #333;
-}
-
-.prescription-item h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #007bff;
-}
-
-.medication-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.medication-item {
-    background: #e8f5e9;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 5px;
-    font-size: 14px;
+    /* Red color */
     font-weight: bold;
-    color: #333;
+}
+
+/* Hover effect */
+.modal-header .btn-close:hover {
+    color: darkred;
+    opacity: 0.8;
+}
+/* Style the modal body */
+.modal-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Style the medical records list */
+#medicalRecordsList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style each record item */
+#medicalRecordsList li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Add an icon before each item */
+#medicalRecordsList li::before {
+    content: "🩺";
+    /* Medical icon */
+    margin-right: 10px;
+}
+
+/* Hover effect */
+#medicalRecordsList li:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+/* Style the modal footer (if needed) */
+.modal-footer {
+    background-color: #f1f1f1;
+    border-top: 2px solid #ccc;
 }
