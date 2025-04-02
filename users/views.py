@@ -7,6 +7,7 @@ from django.http import JsonResponse
 import json
 from appointments.views import get_user_appointments
 from medication.views import get_user_prescriptions
+from .forms import PatientRegistrationForm
 
 
 def index(request):
@@ -92,3 +93,15 @@ def user_list(request):
     user_data = users.values("id", "email", "first_name", "last_name", "user_type", "country", "city")
 
     return render(request, 'patients.html', {"users": user_data})
+
+
+def register_patient(request):
+    if request.method == "POST":
+        form = PatientRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")  # Redirect to login or dashboard
+    else:
+        form = PatientRegistrationForm()
+    
+    return render(request, "signup.html", {"form": form})

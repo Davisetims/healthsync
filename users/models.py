@@ -36,7 +36,6 @@ class User(AbstractUser):
     country =models.CharField(blank=True,null=True, max_length=50)
     city = models.CharField(blank=True, null=True, max_length=50)
     plan = models.CharField(max_length=10, choices=PLAN_CHOICES, default=FREE)
-    password = models.CharField(max_length=100)
     user_type = models.CharField(max_length=20, choices=USER_TYPES, default='patient')
 
     USERNAME_FIELD = 'email'
