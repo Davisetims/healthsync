@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 import json
 from medication.models import MedicalRecord, HealthProfile ,Prescription
 from users.models import User
+from .forms import PrescriptionForm
 
 
 @login_required(login_url='/login/')  
@@ -28,19 +29,16 @@ def get_medical_records(request):
 @login_required(login_url='/login/')
 def post_prescription(request):
     if request.method == "POST":
-        try:
-            data = json.loads(request.body)
-            patient = User.objects.get(id=data["patient"])
-            prescription = Prescription.objects.create(
-                patient=patient,
-                name=data["name"],
-                dosage=data["dosage"],
-                frequency=data["frequency"],
-                start_date=data["start_date"],
-                end_date=data.get("end_date"),
-                prescribed_by=request.user  # The logged-in doctor
-            )
-            return JsonResponse({"message": "Prescription added successfully!"}, status=201)
-        except Exception as e:
-            return JsonResponse({"error": str(e)}, status=400)
-    return JsonResponse({"error": "Invalid request"}, status=400)
+        form = PrescriptionForm(request.POST)
+        if form.is_valid():
+            prescription = form.save(commit=False)
+            prescription.prescribed_by = request.user  # The logged-in doctor
+            prescription.save()
+            return redirect("doctor-dashboard") 
+        else:
+            return JsonResponse({"error": form.errors}, status=400)
+
+    else:
+        form = PrescriptionForm()
+        patients = User.objects.filter(user_type='patient')  # Only list patients
+        return render(request, 'post_prescriptions.html', {'form': form, 'patients': patients})

@@ -23,7 +23,7 @@
                     <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
                     <li><a href="#"><i class="fas fa-calendar-check"></i> Appointments</a></li>
                     <li><a href="#"onclick="location.href='/patients'" ><i class="fas fa-user-injured"></i> Patients</a></li>
-                    <li><a href="#"><i class="fas fa-prescription"></i> Prescriptions</a></li>
+                    <li><a href="#" id="prescriptionbtn"><i class="fas fa-prescription"></i> Prescriptions</a></li>
                     <li><a href="#"><i class="fas fa-comment-medical"></i> Consultations</a></li>
 
                     <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
@@ -185,7 +185,7 @@
                                 <div class="action-icon blue">
                                     <i class="fas fa-calendar-plus"></i>
                                 </div>
-                                <span>Schedule Appointment</span>
+                                <span>View Appointment</span>
                             </div>
                             <div class="action-item">
                                 <div class="action-icon green">
@@ -193,60 +193,13 @@
                                 </div>
                                 <span>my profile</span>
                             </div>
-                            <div class="action-item" data-bs-toggle="modal" data-bs-target="#prescriptionModal">
+                            <div class="action-item"  id="prescriptionbtn" >
                                 <div class="action-icon purple">
                                     <i class="fas fa-file-prescription"></i>
                                 </div>
                                 <span>Write Prescription</span>
                             </div>
-                        <!-- Prescription Modal -->
-                        <div class="modal fade" id="prescriptionModal" tabindex="-1" aria-labelledby="prescriptionModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="prescriptionModalLabel">New Prescription</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="prescriptionForm">
-                                            <div class="mb-3">
-                                                <label for="patient" class="form-label">Patient</label>
-                                                <select id="patient" class="form-control" required>
-                                                    <option value="">Select a patient</option>
-                                                    <!-- Patients will be loaded dynamically -->
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="name" class="form-label">Prescription Name</label>
-                                                <input type="text" id="name" class="form-control" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="dosage" class="form-label">Dosage</label>
-                                                <input type="text" id="dosage" class="form-control" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="frequency" class="form-label">Frequency</label>
-                                                <input type="text" id="frequency" class="form-control" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="start_date" class="form-label">Start Date</label>
-                                                <input type="date" id="start_date" class="form-control" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="end_date" class="form-label">End Date</label>
-                                                <input type="date" id="end_date" class="form-control">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Submit Prescription</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    
                             <div class="action-item">
                                 <div class="action-icon orange">
                                     <i class="fas fa-video"></i>
@@ -621,6 +574,7 @@
             </div>
         </div>
     </div>
+       
     <script src="{% static 'javascript/doctor_dashboard.js' %}"></script>
 </body>
 
