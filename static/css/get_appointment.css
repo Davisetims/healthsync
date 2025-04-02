@@ -1,0 +1,280 @@
+/* Book Appointment Form Styles */
+
+/* Main container */
+.appointment-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Header styling */
+.appointment-header {
+    background-color: #f8f9fa;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.appointment-header h2 {
+    color: #0275d8;
+    /* Blue color matching HMS header */
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Messages container */
+.messages-container {
+    padding: 15px 25px 5px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.message-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Form container */
+.appointment-form-container {
+    padding: 20px 25px 30px;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form fields styling */
+.form-fields {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0275d8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(2, 117, 216, 0.1);
+}
+
+/* Style for select dropdown */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Style for date and time inputs */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+.help-text {
+    display: block;
+    margin-top: 6px;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.error-messages {
+    margin-top: 8px;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 13px;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Form actions styling */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.submit-button {
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #0062cc;
+}
+
+.cancel-button {
+    background-color: #f8f9fa;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+    background-color: #e9ecef;
+    border-color: #c8c8c8;
+}
+
+/* Checkbox and radio button styling */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .appointment-container {
+        margin: 10px;
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    .appointment-header {
+        padding: 15px 20px;
+    }
+
+    .appointment-form-container {
+        padding: 15px 20px 25px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .submit-button,
+    .cancel-button {
+        width: 100%;
+        padding: 14px 20px;
+        /* Larger touch target on mobile */
+    }
+}
+
+/* Focus visible for accessibility */
+.submit-button:focus-visible,
+.cancel-button:focus-visible {
+    outline: 3px solid rgba(2, 117, 216, 0.5);
+    outline-offset: 2px;
+}
+
+/* Textarea height */
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+/* Disabled state */
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Add subtle animation on form load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.appointment-container {
+    animation: fadeIn 0.3s ease-out;
+}

@@ -26,3 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("bookAppointmentBtn").addEventListener("click", function () {
+        window.location.href = "/book/appointment/";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("GetAppointment").addEventListener("click", function () {
+        window.location.href = "/get/appointments/";
+    });
+});
+

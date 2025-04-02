@@ -3,6 +3,7 @@ from users.models import User
 
 class HealthProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, 
+                                limit_choices_to={'user_type': 'patient'},
                         related_name="health_profile", null=True, blank=True)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length=10, choices=[('male', 'Male'), ('female', 'Female')])

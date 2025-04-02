@@ -21,7 +21,7 @@
             <nav class="menu">
                 <ul>
                     <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
-                    <li><a href="#appointments"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="#appointments" id="GetAppointment" ><i class="fas fa-calendar-alt"></i> Appointments</a></li>
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#medicalRecordsModal">
                         <i class="fas fa-notes-medical"></i> Medical Records
                     </a></li>
@@ -217,28 +217,7 @@
                                     </div>
                                     <span>Book Appointment</span>
                                 </div>
-                                <!-- Book Appointment Popup -->
-                                <!-- Book Appointment Popup -->
-                                <div id="appointmentModal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <h2>Book an Appointment</h2>
-                                        <form id="appointmentForm">
-                                            <label for="doctor">Select Doctor:</label>
-                                            <select id="doctor" required>
-                                                <option value="">Loading doctors...</option>
-                                            </select>
-
-                                            <label for="appointment_date">Appointment Date:</label>
-                                            <input type="datetime-local" id="appointment_date" required>
-
-                                            <label for="notes">Notes (Optional):</label>
-                                            <textarea id="notes"></textarea>
-
-                                            <button type="submit">Book Appointment</button>
-                                        </form>
-                                    </div>
-                                </div>
+                               
                                 <div class="action-item" id="openConsultationPopup">
                                     <div class="action-icon green">
                                         <i class="fas fa-video"></i>

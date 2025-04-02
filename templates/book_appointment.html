@@ -1,0 +1,50 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/book_appointment.css' %}">
+<div class="appointment-container">
+    <div class="appointment-header">
+        <h2>Book an Appointment</h2>
+    </div>
+
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            <span class="message-icon">{% if message.tags == 'success' %}✓{% else %}ℹ{% endif %}</span>
+            <span class="message-text">{{ message }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="appointment-form-container">
+        <form method="post" class="appointment-form">
+            {% csrf_token %}
+
+            <div class="form-fields">
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% if field.errors %}
+                    <div class="error-messages">
+                        {% for error in field.errors %}
+                        <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-button">Book Appointment</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
