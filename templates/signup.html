@@ -1,8 +1,10 @@
-{%load static %}
+{% load static %}
 {% block content %}
-<div class="container">
-    <h2>Register as a Patient</h2>
-    <form method="post">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/patient_registration.css' %}">
+<div class="registration-container">
+    <h2>Register to HealthSync</h2>
+    <form method="post" class="registration-form">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Register</button>
