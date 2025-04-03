@@ -1,3 +1,4 @@
 from django.contrib import admin
+from chat_ai. models import ChatSession
 
-# Register your models here.
+admin.site.register(ChatSession)

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Your Prescriptions</h2>
+        <table>
+            <tr>
+                <th>Patient</th>
+                <th>Name</th>
+                <th>Dosage</th>
+                <th>Frequency</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+            {% for prescription in prescriptions %}
+            <tr>
+                <td>{{ prescription.patient.username }}</td>
+                <td>{{ prescription.name }}</td>
+                <td>{{ prescription.dosage }}</td>
+                <td>{{ prescription.frequency }}</td>
+                <td>{{ prescription.start_date|date:"Y-m-d" }}</td>
+                <td>{{ prescription.end_date|date:"Y-m-d" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" style="text-align: center;">No prescriptions available</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -72,3 +72,16 @@ def get_user_prescriptions(request):
 
     return JsonResponse({"total_prescriptions": total_prescriptions, "prescriptions": prescription_data}, safe=False)
     
+
+@login_required(login_url='/login/')
+def render_prescriptions(request):
+    user = request.user
+
+    if user.user_type == "doctor":
+        prescriptions = Prescription.objects.filter(prescribed_by=user)  # Doctor's prescriptions
+    elif user.user_type == "patient":
+        prescriptions = Prescription.objects.filter(patient=user)  # Patient's prescriptions
+    else:
+        prescriptions = Prescription.objects.none()  # No prescriptions for other users
+
+    return render(request, 'prescriptions.html', {'prescriptions': prescriptions})
