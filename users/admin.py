@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from users.models import Reminder
 
 User = get_user_model()  # Get the custom User model
 
@@ -54,3 +55,4 @@ class CustomUserAdmin(UserAdmin):
     )
 
 admin.site.register(User, CustomUserAdmin)  # Register custom UserAdmin
+admin.site.register(Reminder)

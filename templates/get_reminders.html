@@ -1,0 +1,19 @@
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2>Your Reminders</h2>
+    {% if reminders %}
+    <ul class="list-group">
+        {% for reminder in reminders %}
+        <li class="list-group-item">
+            <strong>{{ reminder.reminder_type }}</strong>: {{ reminder.message }}
+            <br>
+            <small>Scheduled: {{ reminder.scheduled_time }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No reminders available.</p>
+    {% endif %}
+</div>
+{% endblock %}

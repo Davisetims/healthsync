@@ -1,0 +1,12 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/meeting.css' %}">
+<div class="container">
+    <h2>Create Virtual Meeting</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Create Meeting</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/send_reminder.css' %}">
+<div class="form-container">
+<div class="message-form">
+    <h2>Send Reminder</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Reminder</button>
+    </form>
+</div>
+</div>
+{% endblock %}

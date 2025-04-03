@@ -44,3 +44,32 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+
+class Reminder(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, limit_choices_to={'user_type': 'patient'},
+        related_name="reminders")
+    reminder_type = models.CharField(max_length=20, choices=[('medication', 'Medication'), ('appointment', 'Appointment')])
+    message = models.TextField()
+    scheduled_time = models.DateTimeField()
+    is_sent = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.reminder_type} ({self.scheduled_time})"
+
+
+class VirtualMeeting(models.Model):
+    doctor = models.ForeignKey(
+        User, on_delete=models.CASCADE, 
+        limit_choices_to={'user_type': 'doctor'},
+        related_name="shared_data")
+    patient = models.ForeignKey(
+        User, on_delete=models.CASCADE, 
+        limit_choices_to={'user_type': 'patient'},
+        related_name="received_data")
+    meeting_time = models.DateTimeField(null=True, blank=True)
+    meeting_link = models.URLField()
+    
+
+    def __str__(self):
+        return f"{self.doctor.username} → {self.patient.username}"

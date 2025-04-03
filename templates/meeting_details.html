@@ -1,0 +1,32 @@
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/meeting_details.css' %}">
+<div class="container">
+    <h2>Virtual Meetings</h2>
+    {% if meetings %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Patient</th>
+                <th>Meeting Link</th>
+                <th>Scheduled On</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for meeting in meetings %}
+            <tr>
+                <td>{{ meeting.doctor.first_name }} {{ meeting.doctor.last_name }}</td>
+                <td>{{ meeting.patient.first_name }} {{ meeting.patient.last_name }}</td>
+                <td><a href="{{ meeting.meeting_link }}" target="_blank">Join Meeting</a></td>
+                <td>{{ meeting.meeting_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No meetings found.</p>
+    {% endif %}
+</div>
+{% endblock %}
