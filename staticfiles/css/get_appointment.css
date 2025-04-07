@@ -1,0 +1,157 @@
+/* Base Styles */
+.appointments-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.appointments-container h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 0.75rem;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+thead {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #eef1f5;
+    color: #555;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+    transform: translateX(4px);
+}
+
+/* Status Badges */
+td[class^="status-"] {
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-confirmed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-completed {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .appointments-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tbody tr {
+    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+tbody tr:nth-child(5) {
+    animation-delay: 0.5s;
+}

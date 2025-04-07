@@ -1,0 +1,319 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(135deg, #f0f5ff 0%, #e6f0ff 100%);
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.login-card {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Illustration */
+.illustration-section {
+    flex: 1;
+    background-color: #0077cc;
+    padding: 40px;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 0 0 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    max-width: 350px;
+}
+
+.doctor-illustrations {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+
+.doctor-1 {
+    top: 0;
+    left: 0;
+}
+
+.doctor-2 {
+    top: 110px;
+    right: 0;
+}
+
+.doctor-3 {
+    bottom: 0;
+    left: 20px;
+}
+
+.doctor-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.doctor-window {
+    flex: 1;
+    background-color: #f0f5ff;
+    height: 100%;
+    border-radius: 8px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.window-controls {
+    display: flex;
+    padding: 5px;
+}
+
+.control {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 3px;
+}
+
+/* Right Section - Login Form */
+.login-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.forgot-password {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.login-button {
+    background-color: #0f2b46;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0a1f33;
+}
+
+.signup-option {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0077cc;
+    cursor: pointer;
+}
+
+.login-footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .illustration-section {
+        border-radius: 20px 20px 0 0;
+        padding: 30px;
+        height: 300px;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .doctor-card {
+        width: 140px;
+        height: 80px;
+    }
+
+    .doctor-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .doctor-1 {
+        top: 80px;
+        left: 0;
+    }
+
+    .doctor-2 {
+        top: 80px;
+        right: 0;
+    }
+
+    .doctor-3 {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .login-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        border-radius: 15px;
+    }
+
+    .illustration-section {
+        padding: 20px;
+        height: 250px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .doctor-card {
+        width: 120px;
+        height: 70px;
+    }
+
+    .login-section {
+        padding: 20px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

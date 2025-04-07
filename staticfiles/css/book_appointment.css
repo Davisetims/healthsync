@@ -1,0 +1,253 @@
+/* Appointment Booking Form Styles */
+
+/* Main container */
+.appointment-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Header styling */
+.appointment-header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.appointment-header h2 {
+    color: #0275d8;
+    /* Blue color matching HMS header */
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Messages container */
+.messages-container {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.message-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Form container */
+.appointment-form-container {
+    padding: 20px;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form fields styling */
+.form-fields {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0275d8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(2, 117, 216, 0.1);
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    appearance: none;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.help-text {
+    display: block;
+    margin-top: 6px;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.error-messages {
+    margin-top: 6px;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 13px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Form actions styling */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.submit-button {
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #0062cc;
+}
+
+.cancel-button {
+    background-color: #f8f9fa;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .appointment-container {
+        margin: 10px;
+        max-width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .submit-button,
+    .cancel-button {
+        width: 100%;
+    }
+}
+
+/* Custom styling for different form field types */
+select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+    appearance: none;
+}
+
+/* Field-specific styling */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Calendar widget enhancements */
+.calendar-widget {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.calendar-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar-date:hover {
+    background-color: #e9ecef;
+}
+
+.calendar-date.selected {
+    background-color: #0275d8;
+    color: white;
+    border-color: #0275d8;
+}
+
+.calendar-date.unavailable {
+    background-color: #f8f9fa;
+    color: #ccc;
+    cursor: not-allowed;
+}
